@@ -11,8 +11,13 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
+        while (n%2==0){
+            System.out.println("Nhap lai so khac:");
+            n = scanner.nextInt();
+        }
         System.out.println("So vua nhap: "+n);
-        double n2 = scanner.nextDouble();// nhap vao 1 so thuc
+
+        double n2 = scanner.nextDouble();
         String str = scanner.nextLine();// nhap vao 1 chuoi
         for (int i=0;i<10;i++){
             System.out.println("i="+i);
