@@ -1,5 +1,7 @@
 package session1;
 
+import session2.Human;
+
 import java.util.Scanner;
 
 public class Main {
@@ -8,6 +10,17 @@ public class Main {
     static final int z = 40;
 
     public static void main(String args[]){
+        Human human = new Human();
+        human.name = "abc";
+        human.inputInfo();
+        human.showInfo();
+
+        Human h2 = new Human();
+        h2.age = 20;
+        h2.sayHello();
+    }
+
+    public static void main2(String args[]){
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
