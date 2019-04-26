@@ -44,6 +44,8 @@ public class User {
         for (int i=0;i<50;i++){
             userArray.add(new User(i,"Le van A","aa@gmail.com","123456"));
         }
+        // Xoa 1 element khoi arraylist
+        userArray.remove(2); // xoa user co index = 2
 
         for (User u: userArray){
             System.out.println("ID: "+u.id);
