@@ -2,6 +2,8 @@ package jv1_lab_session6;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PhoneBook extends Phone{
 
@@ -46,8 +48,17 @@ public class PhoneBook extends Phone{
             System.out.println("finally block ..");
         }
 
+        IPhone iPhone = new IPhone() {
+            @Override
+            public void calling() {
+                System.out.println("Calling..");
+            }
+            public void ring(){
 
-
+            }
+        };
+        iPhone.calling();
+        iPhone.ring();
     }
 
     @Override
@@ -88,17 +99,31 @@ public class PhoneBook extends Phone{
 
     @Override
     public void updatePhone(String name, String newphone) {
-
+        for (PhoneNumber phoneNumber:PhoneList){
+            if(phoneNumber.getName().equals(name)){
+                phoneNumber.setPhone(newphone);
+            }
+        }
     }
 
     @Override
     public void searchPhone(String name) {
-
+        for (PhoneNumber phoneNumber:PhoneList){
+            if(phoneNumber.getName().equals(name)){
+                System.out.println(phoneNumber.getName()+": "+phoneNumber.getPhone());
+            }
+        }
     }
 
     @Override
     public void sort() {
         // Collections.sort ..
-        // Bubble sort
+//        Collections.sort(PhoneList, new Comparator<PhoneNumber>() {
+//            @Override
+//            public int compare(PhoneNumber o1, PhoneNumber o2) {
+//                return o1.getName().compareTo(o2.getName());
+//            }
+//        });
+        Collections.sort(PhoneList);
     }
 }

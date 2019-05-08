@@ -1,6 +1,6 @@
 package jv1_lab_session6;
 
-public class PhoneNumber {
+public class PhoneNumber implements Comparable<PhoneNumber>{
     String name;
     String phone;
 
@@ -35,5 +35,10 @@ public class PhoneNumber {
         public void billing(){
             System.out.println("Billing....");
         }
+    }
+
+    @Override
+    public int compareTo(PhoneNumber o) {
+        return this.getName().compareTo(o.getName());
     }
 }
