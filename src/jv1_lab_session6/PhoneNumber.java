@@ -24,4 +24,16 @@ public class PhoneNumber {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public class Telephone{
+        public void call(){
+            System.out.println("Calling....");
+        }
+    }
+
+    public static class Cost{
+        public void billing(){
+            System.out.println("Billing....");
+        }
+    }
 }
