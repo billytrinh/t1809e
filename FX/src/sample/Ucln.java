@@ -11,16 +11,22 @@ public class Ucln {
 
 
     public void submit(){
-        int no1 = Integer.parseInt(txtSTN.getText());
-        int no2 = Integer.parseInt(txtSTH.getText());
-        int ucln = 1;
-        for (int i=1;i< Math.min(no1,no2);i++){
-            if(no1%i==0 && no2%i==0){
-                ucln = i;
+        try{
+            int no1 = Integer.parseInt(txtSTN.getText());
+            int no2 = Integer.parseInt(txtSTH.getText());
+            int ucln = 1;
+            for (int i=1;i< Math.min(no1,no2);i++){
+                if(no1%i==0 && no2%i==0){
+                    ucln = i;
+                }
             }
+
+            txtKQ.setText(""+ucln);
+        }catch (Exception e){
+            //txtKQ.setText(e.getMessage());
+            txtKQ.setText("Invalid number");
         }
 
-        txtKQ.setText(""+ucln);
 
     }
 
