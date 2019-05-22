@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="jv2_session2.student_fx.StudentController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="463.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="txtName" layoutX="40.0" layoutY="49.0" prefHeight="40.0" prefWidth="383.0" promptText="Student Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <DatePicker fx:id="txtBirth" layoutX="40.0" layoutY="126.0" prefHeight="40.0" prefWidth="383.0" promptText="Birthday" />
+      <TextField fx:id="txtClass" layoutX="40.0" layoutY="208.0" prefHeight="27.0" prefWidth="383.0" promptText="Class Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtMssv" layoutX="40.0" layoutY="284.0" prefHeight="27.0" prefWidth="383.0" promptText="Student ID">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button onAction="#submit" layoutX="173.0" layoutY="364.0" mnemonicParsing="false" text="Submit">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Text fx:id="txtSuccess" fill="#42ad5c" layoutX="40.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Success" visible="false" wrappingWidth="383.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtFail" fill="#c33525" layoutX="50.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fail.." visible="false" wrappingWidth="383.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
