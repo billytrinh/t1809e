@@ -1,5 +1,6 @@
 package jv2_assignment5;
 
+import connector.Connector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -31,13 +32,9 @@ public class List implements Initializable {
 
         String sql = "SELECT * FROM user";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
 
-            String url = "jdbc:mysql://localhost:8889/T1809E";
-            Connection con = DriverManager.getConnection(url,"root","root");
-
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
+            Connector cn = new Connector();
+            ResultSet rs = cn.getQuery(sql);
 
             ObservableList<User> list = FXCollections.observableArrayList();
 

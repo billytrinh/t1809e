@@ -1,10 +1,10 @@
 package jv2_assignment5;
 
+import connector.Connector;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import java.sql.*;
 
 public class Register {
     public TextField txtUsername;
@@ -19,13 +19,8 @@ public class Register {
         String sql = "INSERT INTO user (username,email,password) " +
                 " VALUES('"+username+"','"+email+"','"+password+"')";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            String url = "jdbc:mysql://localhost:8889/T1809E";
-            Connection con = DriverManager.getConnection(url,"root","root");
-
-            Statement st = con.createStatement();
-            int number = st.executeUpdate(sql);
+            Connector cn = new Connector();
+            int number = cn.updateQuery(sql);
             if(number>0){
                 goToList();
             }
