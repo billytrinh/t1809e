@@ -2,6 +2,7 @@ package jv2_session7;
 
 import connector.Connector;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class UserDAO implements UserInterface{
@@ -48,5 +49,18 @@ public class UserDAO implements UserInterface{
     @Override
     public boolean delete(User u) {
         return false;
+    }
+
+    public User getUser(Integer id){
+        String sql = "SELECT * FROM user WHERE id = "+id;
+        Connector cn = Connector.getInstance();
+        try {
+            ResultSet rs = cn.getQuery(sql);
+            while (rs.next()){
+                return new User(rs.getInt("id"),rs.getString("username"),
+                        rs.getString("email"),rs.getString("password"));
+            }
+        }catch (Exception e){}
+        return null;
     }
 }
