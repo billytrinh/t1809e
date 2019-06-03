@@ -19,7 +19,7 @@ public class Register {
         String sql = "INSERT INTO user (username,email,password) " +
                 " VALUES('"+username+"','"+email+"','"+password+"')";
         try {
-            Connector cn = new Connector();
+            Connector cn = Connector.getInstance();
             int number = cn.updateQuery(sql);
             if(number>0){
                 goToList();

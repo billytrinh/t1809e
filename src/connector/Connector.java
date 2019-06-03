@@ -10,13 +10,22 @@ public class Connector {
 
     public Connection connection;
 
-    public Connector(){
+    private static Connector instance;
+
+    private Connector(){
         try {
             Class.forName(Driver);
             this.connection = DriverManager.getConnection(DB_URL,DB_User,DB_Password);
         }catch (Exception e){
 
         }
+    }
+
+    public static Connector getInstance(){
+        if(instance == null){
+            instance = new Connector();
+        }
+        return instance;
     }
 
     public ResultSet getQuery(String sql) throws Exception{

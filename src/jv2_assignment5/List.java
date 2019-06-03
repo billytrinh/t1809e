@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import java.sql.*;
@@ -35,8 +36,8 @@ public class List implements Initializable {
 
         String sql = "SELECT * FROM user";
         try {
-
-            Connector cn = new Connector();
+            LocalDate x = LocalDate.now();
+            Connector cn = Connector.getInstance();
             ResultSet rs = cn.getQuery(sql);
 
             ObservableList<User> list = FXCollections.observableArrayList();
