@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import jv2_session7.User;
+import jv2_session7.UserDAO;
 
 public class Register {
     public TextField txtUsername;
@@ -16,14 +18,11 @@ public class Register {
         String email = txtEmail.getText();
         String password = txtPassword.getText();
 
-        String sql = "INSERT INTO user (username,email,password) " +
-                " VALUES('"+username+"','"+email+"','"+password+"')";
+
         try {
-            Connector cn = Connector.getInstance();
-            int number = cn.updateQuery(sql);
-            if(number>0){
-                goToList();
-            }
+            User u = new User(null,username,email,password);
+            UserDAO ud = UserDAO.getInstance();
+            ud.create(u);
         }catch (Exception e){
 
         }
