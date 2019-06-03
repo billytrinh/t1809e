@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -22,6 +23,7 @@ public class List implements Initializable {
     public TableColumn<User,String> colUsername;
     public TableColumn<User,String> colEmail;
     public TableColumn<User,String> colPassword;
+    public TableColumn<User, Button> colEdit;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -29,6 +31,7 @@ public class List implements Initializable {
         colUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
+        colEdit.setCellValueFactory(new PropertyValueFactory<>("edit"));
 
         String sql = "SELECT * FROM user";
         try {
@@ -46,6 +49,7 @@ public class List implements Initializable {
 
                 User u = new User(id,username,email,password);
                 list.add(u);
+                u.updateButton();
             }
 
             tbView.setItems(list);
