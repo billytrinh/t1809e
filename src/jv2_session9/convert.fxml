@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="jv2_session9.ConvertController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="txtLabel" layoutX="213.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convert Money">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtMoney" layoutX="54.0" layoutY="82.0" promptText="Money">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <RadioButton fx:id="rbVN" onAction="#convertVN" layoutX="357.0" layoutY="91.0" mnemonicParsing="false" text="VND" selected="true" />
+      <RadioButton fx:id="rbUS" onAction="#convertUS" layoutX="444.0" layoutY="91.0" mnemonicParsing="false" text="US Dollar" />
+      <TextArea fx:id="txtValue" layoutX="54.0" layoutY="172.0" prefHeight="69.0" prefWidth="484.0" promptText="Value">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="btnSubmit" onAction="#convert" layoutX="54.0" layoutY="287.0" mnemonicParsing="false" text="Convert">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="rbEN" onAction="#changeEN" layoutX="359.0" layoutY="309.0" mnemonicParsing="false" text="EN" selected="true" />
+      <RadioButton fx:id="rbVI" onAction="#changeVI" layoutX="409.0" layoutY="309.0" mnemonicParsing="false" text="VI" />
+   </children>
+</Pane>
